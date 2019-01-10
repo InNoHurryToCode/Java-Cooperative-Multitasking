@@ -89,6 +89,7 @@ public class TimeSimulationProcess extends Process {
 
     private int getDaysInWeek(int month, int year) {
         switch (month) {
+            // months with 31 days
             case 1:
             case 4:
             case 6:
@@ -97,6 +98,7 @@ public class TimeSimulationProcess extends Process {
             case 12:
                 return 31;
 
+            // months with 30 days
             case 3:
             case 5:
             case 7:
@@ -104,11 +106,12 @@ public class TimeSimulationProcess extends Process {
             case 11:
                 return 30;
 
+            // leap year
             case 2:
                 if (year % 4 == 0) {
-                    return 28;
+                    return 29;
                 } else {
-                    return 27;
+                    return 28;
                 }
         }
 
