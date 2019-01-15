@@ -1,18 +1,28 @@
-public abstract class Process {
-    ProcessState state = ProcessState.UninitializedUpdating;
+public class Process {
+    public ProcessState state = ProcessState.UninitializedUpdating;
 
     // initialize the process
-    public abstract void init();
+    public void init() {
+        System.out.println("Initializing process");
+    }
 
     // update the process
-    public abstract void update();
+    public void update() {
+        // code here
+    }
 
     // called before resuming
-    public abstract void enable();
+    public void enable() {
+        System.out.println("Enabling process");
+    }
 
     // called before being paused
-    public abstract void disable();
+    public void disable() {
+        System.out.println("Disabling process");
+    }
 
     // called before destruction
-    public abstract void destroy();
+    public void destroy() {
+        System.out.println("Destroying process");
+    }
 }

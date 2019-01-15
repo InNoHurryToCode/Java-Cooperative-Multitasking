@@ -10,11 +10,13 @@ public class TimeSimulationProcess extends Process {
 
     // process init
     public void init() {
+        super.init();
         printCurrentDateTime();
     }
 
     // process update
     public void update() {
+        super.update();
         this.updateSecond();
         this.updateMinute();
         this.updateHour();
@@ -26,16 +28,19 @@ public class TimeSimulationProcess extends Process {
 
     // process enable
     public void enable() {
+        super.enable();
         printCurrentDateTime();
     }
 
     // process disable
     public void disable() {
+        super.disable();;
         printCurrentDateTime();
     }
 
     // process destroy
     public void destroy() {
+        super.destroy();
         printCurrentDateTime();
     }
 
