@@ -1,12 +1,12 @@
 public class TimeSimulationProcess extends Process {
-    int second = 0;
-    int minute = 0;
-    int hour = 0;
-    int day = 1;
-    int weekDay = 1;
-    int week = 1;
-    int month = 1;
-    int year = 1;
+    public int second = 0;
+    public int minute = 0;
+    public int hour = 0;
+    public int day = 1;
+    public int weekDay = 1;
+    public int week = 1;
+    public int month = 1;
+    public int year = 1;
 
     // process init
     public void init() {
