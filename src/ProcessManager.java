@@ -22,14 +22,12 @@ public class ProcessManager {
 
     // update subscribed processes based on state
     public void update() {
-        // calculate delta time
+        // calculate yield
         long currentTime = System.currentTimeMillis();
         long deltaTime = currentTime - this.previousTime;
+        float currentYield = (float)deltaTime / 1000;  // Milliseconds to seconds;
 
         this.previousTime = currentTime;
-
-        // calculate yield
-        float currentYield = (float)deltaTime / 1000;  // Milliseconds to seconds;
 
         // update subscribed processes
         for (int i = 0; i < processes.size(); ++i) {
