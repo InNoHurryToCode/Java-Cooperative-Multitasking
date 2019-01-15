@@ -28,7 +28,7 @@ public class DaytimeProcess extends Process {
         this.printCurrentDateTime();
 
         // wait for next update
-        this.nextYield = 0.0f;
+        this.nextYield = 0.1f;
     }
 
     // process enable
