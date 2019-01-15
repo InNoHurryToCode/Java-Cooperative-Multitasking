@@ -19,7 +19,7 @@ public class ProcessManager {
     }
 
     // update subscribed processes based on state
-    public void Update() {
+    public void update() {
         for (int i = 0; i < processes.size(); ++i) {
             Process currentProcess = this.processes.get(i);
 
