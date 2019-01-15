@@ -62,4 +62,9 @@ public class ProcessManager {
             }
         }
     }
+
+    // get amount of registered processes
+    public int count() {
+        return this.processes.size();
+    }
 }
