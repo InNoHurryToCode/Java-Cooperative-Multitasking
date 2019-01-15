@@ -1,12 +1,5 @@
-public class TimeSimulationProcess extends Process {
-    public int second = 0;
-    public int minute = 0;
-    public int hour = 0;
-    public int day = 1;
-    public int weekDay = 1;
-    public int week = 1;
-    public int month = 1;
-    public int year = 1;
+public class DaytimeProcess extends Process {
+    public Daytime daytime = new Daytime();
 
     // process init
     public void init() {
@@ -35,7 +28,7 @@ public class TimeSimulationProcess extends Process {
         this.printCurrentDateTime();
 
         // wait for next update
-        this.nextYield = 1.0f;
+        this.nextYield = 0.0f;
     }
 
     // process enable
@@ -66,50 +59,50 @@ public class TimeSimulationProcess extends Process {
     }
 
     private void updateSecond() {
-        ++this.second;
+        ++this.daytime.second;
     }
 
     private void updateMinute() {
-        if (this.second > 60) {
-            ++this.minute;
-            this.second = 0;
+        if (this.daytime.second > 59) {
+            ++this.daytime.minute;
+            this.daytime.second = 0;
         }
     }
 
     private void updateHour() {
-        if (this.minute > 60) {
-            ++this.hour;
-            this.minute = 0;
+        if (this.daytime.minute > 59) {
+            ++this.daytime.hour;
+            this.daytime.minute = 0;
         };
     }
 
     private void updateDay() {
-        if (this.hour > 23) {
-            ++this.day;
-            ++this.weekDay;
-            this.hour = 0;
+        if (this.daytime.hour > 23) {
+            ++this.daytime.day;
+            ++this.daytime.weekDay;
+            this.daytime.hour = 0;
         }
     }
 
     private void updateWeek() {
-        if (this.weekDay > 7) {
-            ++this.week;
-            this.weekDay = 1;
+        if (this.daytime.weekDay > 7) {
+            ++this.daytime.week;
+            this.daytime.weekDay = 1;
         }
     }
 
     private void updateMonth() {
-        if (this.day > getDaysInWeek(this.month, this.year)) {
-            ++this.month;
-            this.day = 1;
+        if (this.daytime.day > getDaysInWeek(this.daytime.month, this.daytime.year)) {
+            ++this.daytime.month;
+            this.daytime.day = 1;
         }
     }
 
     private void updateYear() {
-        if (this.month > 12) {
-            ++this.year;
-            this.week = 1;
-            this.month = 1;
+        if (this.daytime.month > 12) {
+            ++this.daytime.year;
+            this.daytime.week = 1;
+            this.daytime.month = 1;
         }
     }
 
@@ -145,6 +138,6 @@ public class TimeSimulationProcess extends Process {
     }
 
     private void printCurrentDateTime() {
-        System.out.println(this.year + "/" + this.month + "/" + this.day + " " + this.hour + "-" + this.minute + "-" + this.second);
+        System.out.println(this.daytime.year + "/" + this.daytime.month + "/" + this.daytime.day + " " + this.daytime.hour + "-" + this.daytime.minute + "-" + this.daytime.second);
     }
 }

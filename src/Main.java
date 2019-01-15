@@ -1,15 +1,15 @@
 public class Main {
     public static void main(String[] args) {
         ProcessManager manager = new ProcessManager();
-        TimeSimulationProcess timeSimulationProcess = new TimeSimulationProcess();
+        DaytimeProcess daytimeProcess = new DaytimeProcess();
 
         // subscribe processes
-        manager.addProcess(timeSimulationProcess);
+        manager.addProcess(daytimeProcess);
 
         while (true) {
             // unsubscribe the process
-            if (timeSimulationProcess.minute > 1) {
-                timeSimulationProcess.state = ProcessState.Destroying;
+            if (daytimeProcess.daytime.year > 4) {
+                daytimeProcess.state = ProcessState.Destroying;
             }
 
             // break condition
