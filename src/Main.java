@@ -8,7 +8,7 @@ public class Main {
 
         while (true) {
             // unsubscribe the process
-            if (timeSimulationProcess.year > 1) {
+            if (timeSimulationProcess.minute > 1) {
                 timeSimulationProcess.state = ProcessState.Destroying;
             }
 

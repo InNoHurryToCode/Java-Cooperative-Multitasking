@@ -1,5 +1,7 @@
 public class Process {
     public ProcessState state = ProcessState.UninitializedUpdating;
+    public float currentYield = 0.0f;
+    public float nextYield = 0.0f;
 
     // initialize the process
     public void init() {
