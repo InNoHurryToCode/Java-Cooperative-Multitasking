@@ -1,8 +1,8 @@
 import java.util.LinkedList;
 
 public class ProcessManager {
-    LinkedList<Process> processes = null;
-
+    private LinkedList<Process> processes = null;
+    
     // initialize ProcessManager
     public ProcessManager() {
         this.processes = new LinkedList<>();
