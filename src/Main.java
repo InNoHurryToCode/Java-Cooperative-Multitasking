@@ -6,6 +6,7 @@ public class Main {
         // subscribe processes
         manager.addProcess(daytimeProcess);
 
+        // update application
         while (true) {
             // unsubscribe the process
             if (daytimeProcess.daytime.year > 4) {
