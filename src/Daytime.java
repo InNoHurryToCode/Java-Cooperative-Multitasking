@@ -29,4 +29,15 @@ public class Daytime {
         this.month = month;
         this.year = year;
     }
+
+    public Daytime(Daytime daytime) {
+        this.second = daytime.second;
+        this.minute = daytime.minute;
+        this.hour = daytime.hour;
+        this.day = daytime.day;
+        this.weekDay = daytime.weekDay;
+        this.week = daytime.week;
+        this.month = daytime.month;
+        this.year = daytime.year;
+    }
 }
